@@ -1,36 +1,29 @@
 #Deploy Kubernetes Clusters on AWS using Terraform and Terraform RKE Provider
 
-#Requirements
+# Requirements
 
-    terraform :
+    terraform
     Valid AWS access_key and secret_key
     kubectl command
 
 #Deploy Kubernetes Cluster on AWS
+
 #clone this repo
 $ git clone https://github.com/amarendra9991/task.git
 $ cd c:/temp/aws_ec2
 
 #set API keys to environment variables
+
 $ export AWS_ACCESS_KEY_ID="AKIASPBBW3WKPXL4CCNA"
 $ export AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxxxxxx"
 
 #deploy
 $ terraform init && terraform apply
 
-###########################################################################
-#When "terraform apply" is completed,
-#kubeconfig file should be created in the current directory
-###########################################################################
-
 #set KUBECONFIG environment variable for kubectl
 $ export KUBECONFIG=${PWD}/kube_config_cluster.yml
 
-###########################################################################
-#Then, kubectl command can be used
-###########################################################################
 
-#component statuses
 $ kubectl get cs
 
 NAME                 STATUS    MESSAGE              ERROR
